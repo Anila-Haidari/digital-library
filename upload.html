@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Book | Digital Library</title>
+
+    <link rel="stylesheet" href="css/upload.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <section class="upload-section">
+
+        <div class="full-upload">
+
+            <!-- Left Side: Book Information -->
+            <div class="book-update">
+
+                <h2>Add New Book</h2>
+                <p>Fill in the information below to add a new book.</p>
+
+                <form id="upload-form">
+
+                    <div class="form-group">
+                        <label for="book-title">Book Title<span>*</span></label>
+                        <input type="text" id="book-title" placeholder="Enter the name of book" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">Author Name <span>*</span></label>
+                        <input type="text" id="author" placeholder="Enter author's name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category<span>*</span></label>
+
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Education">Education</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Literature">Literature</option>
+                            <option value="Science">Science</option>
+                            <option value="History">History</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Short Description</label>
+
+                        <textarea id="description" placeholder="Write a short description..."></textarea>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">
+                            <i class="fa-solid fa-upload"></i>
+                            Upload Book
+                        </button>
+
+                        <button type="reset" class="cancel-btn">
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Right Side: File Upload -->
+            <div class="right">
+
+                <div class="pdf-upload">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h3>Upload Book PDF <span>*</span></h3>
+
+                    <label for="book-pdf" class="upload-link">
+                        Click to upload
+                    </label>
+
+                    <input type="file" id="book-pdf" accept=".pdf,application/pdf" required>
+
+                    <p>PDF files only. Maximum file size: 500 MB.</p>
+
+                    <span id="pdf-file-name"></span>
+
+                </div>
+
+
+                <div class="cover">
+
+                    <h3>Book Cover</h3>
+
+                    <label for="cover-image" class="cover-page">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="select">Select Cover</span>
+                    </label>
+
+                    <input type="file" id="cover-image" accept="image/*">
+
+                    <span id="cover-file-name"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- My Uploaded Books -->
+    <section class="my-books">
+
+        <h2>My Uploaded Books</h2>
+
+        <div id="books-list"></div>
+
+    </section>
+
+</body>
+
+</html>
