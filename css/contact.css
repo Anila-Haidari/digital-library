@@ -1,0 +1,41 @@
+
+.contact-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.contact-hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f0e8ff;
+    border-radius: 12px;
+}
+
+.contact-hero h1 {
+    color: #6b3fa0;
+    font-size: 32px;
+}
+
+.contact-hero p {
+    line-height: 1.8;
+}
+
+.contact-info {
+    margin-top: 40px;
+    padding: 25px;
+    line-height: 2;
+}
+
+.contact-info h2 {
+    color: #6b3fa0;
+}
+
+.contact-info a {
+    color: #6b3fa0;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}

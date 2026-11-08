@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Book - Digital Library</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Digital Library</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="upload.html">Upload Book</a></li>
+                <li><a href="upload.html#my-books">My Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <h1>Upload a Book</h1>
+            <!-- Upload form goes here -->
+        </section>
+
+        <section class="my-books-section" id="my-books">
+            <h2>My Uploaded Books</h2>
+
+            <div id="myBooksList">
+                <!-- Uploaded books will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Digital Library. All rights reserved.</p>
+    </footer>
+
+    <script src="js/data/books.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/upload.js"></script>
+
+    <footer id="footer"></footer>
+
+<script src="js/footer.js"></script>
+</body>
+</html>

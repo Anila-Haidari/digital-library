@@ -1,0 +1,36 @@
+.about-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f0e8ff;
+    border-radius: 12px;
+}
+
+.about-hero h1 {
+    color: #6b3fa0;
+    font-size: 32px;
+}
+
+.about-hero p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.about-content {
+    margin-top: 40px;
+    line-height: 1.8;
+}
+
+.about-content h2 {
+    color: #6b3fa0;
+    margin-top: 25px;
+}
+
+.about-content li {
+    margin-bottom: 10px;
+}

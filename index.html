@@ -4,10 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Library</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
-    <h1>Welcome to Digital Library</h1>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Digital Library</a>
 
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="upload.html">Upload Book</a></li>
+                <li><a href="upload.html#my-books">My Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Your Next Favorite Book</h1>
+                <p>Explore, share, and enjoy books with our online library.</p>
+
+                <div class="search-box">
+                    <input type="text" id="searchInput"
+                        placeholder="Search by title or author..."
+                        aria-label="Search books by title or author">
+                    <button type="button" id="searchBtn">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <h2>Explore Categories</h2>
+
+            <div class="category-list">
+                <button type="button" class="category-btn active" data-category="All">All</button>
+                <button type="button" class="category-btn" data-category="Programming">Programming</button>
+                <button type="button" class="category-btn" data-category="Science">Science</button>
+                <button type="button" class="category-btn" data-category="History">History</button>
+                <button type="button" class="category-btn" data-category="Language">Language</button>
+                <button type="button" class="category-btn" data-category="Literature">Literature</button>
+            </div>
+        </section>
+
+        <!-- Books Section -->
+        <section class="books-section" id="books">
+            <h2>Available Books</h2>
+
+            <div class="book-list" id="bookList">
+                <!-- Books will appear here using JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Digital Library. All rights reserved.</p>
+    </footer>
+
+    <script src="js/data/books.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/home.js"></script>
+
+    <footer id="footer"></footer>
+
+<script src="js/footer.js"></script>
 </body>
 </html>
