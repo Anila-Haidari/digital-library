@@ -1,4 +1,50 @@
 
+// ===== Bookshelf picture for the hero background (made here, no internet needed) =====
+function makeBookshelf() {
+    const colors = ["#7655a6", "#b5527a", "#2f6f73", "#a8630f", "#3b5b92", "#5a6072", "#e8b75a"];
+    let seed = 7;
+    let x = 0;
+    let books = "";
+
+    // Small "random" numbers that are always the same (so the picture never changes)
+    function next() {
+        seed = (seed * 9301 + 49297) % 233280;
+        return seed / 233280;
+    }
+
+    while (x < 1200) {
+        let width = 24 + Math.floor(next() * 26);
+        const height = 130 + Math.floor(next() * 100);
+        const color = colors[Math.floor(next() * colors.length)];
+
+        if (x + width > 1200) {
+            width = 1200 - x;
+        }
+
+        const y = 250 - height;
+
+        books += '<rect x="' + x + '" y="' + y + '" width="' + (width - 3) + '" height="' + height +
+            '" rx="3" fill="' + color + '"/>';
+        books += '<rect x="' + (x + 5) + '" y="' + (y + 18) + '" width="' + Math.max(width - 13, 2) +
+            '" height="4" fill="#ffffff" fill-opacity="0.5"/>';
+        books += '<rect x="' + (x + 5) + '" y="' + (y + height - 26) + '" width="' + Math.max(width - 13, 2) +
+            '" height="4" fill="#ffffff" fill-opacity="0.5"/>';
+
+        x += width;
+    }
+
+    const svg =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260">' +
+        books +
+        '<rect x="0" y="250" width="1200" height="10" fill="#ffffff" fill-opacity="0.5"/>' +
+        '</svg>';
+
+    return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
+
+// Put the picture behind the hero section
+const heroSection = document.querySelector(".hero");
+heroSection.style.setProperty("--shelf", 'url("' + makeBookshelf() + '")');
 const bookList = document.getElementById("bookList");
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");

@@ -119,3 +119,103 @@ footer {
 .footer-links a:hover {
   color: #f0a500;
 }
+/* ===== Shared colors (use these variables in every page's CSS) ===== */
+:root {
+    --primary: #7655a6;
+    --primary-dark: #5d4089;
+    --secondary: #f0eafa;
+    --accent: #e8b75a;
+    --dark: #25234a;
+    --bg: #faf9fc;
+    --text: #333333;
+        --lavender: #e9e1f5;
+}
+
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navigation Bar: logo on the left, menu in the center */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 18px 7%;
+        background-color: var(--lavender);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    justify-self: start;
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Footer (same colors as the hero section) */
+.footer {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.footer p {
+    font-size: 14px;
+    opacity: 0.85;
+}

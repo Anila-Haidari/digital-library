@@ -218,3 +218,87 @@
     background-color: white;
     border-radius: 10px;
 }
+/* ===== Book card fixes (add at the END of home.css) ===== */
+.book-list {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.book-card h3 {
+    line-height: 1.4;
+    min-height: 2.8em;          /* room for 2 lines of title */
+}
+
+.book-card p:last-of-type {
+    margin-bottom: 14px;
+}
+
+.book-card a {
+    margin-top: auto;           /* pushes the button to the bottom of every card */
+    align-self: flex-start;
+}
+
+/* Phones: two cards per row */
+@media (max-width: 600px) {
+    .book-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .book-card {
+        padding: 12px;
+    }
+
+    .book-card h3 {
+        font-size: 15px;
+    }
+}
+.hero-slogan {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+/* ===== Books background in the hero ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 260px;
+    background-image: var(--shelf);
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: auto 100%;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .hero::after {
+        height: 170px;
+    }
+}

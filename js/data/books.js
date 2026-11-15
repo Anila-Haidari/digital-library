@@ -1,15 +1,51 @@
 // Sample books (shared by all pages).
-// Categories: Programming, Science, History, Language, Literature
+// Categories: Novels, Poetry, Philosophy, Self-Growth, History, Other
 // pdfUrl: path of a PDF inside the books/ folder, or "" if the book has no file.
 
+// Colors of the covers (one color for each category)
+const coverColors = {
+    "Novels": "#7655a6",
+    "Poetry": "#b5527a",
+    "Philosophy": "#2f6f73",
+    "Self-Growth": "#a8630f",
+    "History": "#3b5b92",
+    "Other": "#5a6072"
+};
+
 // Makes a simple cover image locally (no internet needed)
-function makeCover(label) {
+function makeCover(title, author, category) {
+    const color = coverColors[category] || "#7655a6";
+
+    // Split the title into lines of about 14 characters
+    const lines = [];
+    let line = "";
+
+    title.split(" ").forEach(function (word) {
+        if ((line + " " + word).trim().length > 14 && line !== "") {
+            lines.push(line);
+            line = word;
+        } else {
+            line = (line + " " + word).trim();
+        }
+    });
+    lines.push(line);
+
+    // Title text (centered, each line under the other)
+    const startY = 170 - (lines.length - 1) * 18;
+    const titleText = lines.map(function (text, index) {
+        return '<text x="150" y="' + (startY + index * 36) + '" text-anchor="middle" ' +
+            'font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#ffffff">' +
+            text + '</text>';
+    }).join("");
+
     const svg =
         '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400">' +
-        '<rect width="300" height="400" fill="#e9e1f5"/>' +
-        '<rect x="16" y="16" width="268" height="368" fill="none" stroke="#7655a6" stroke-width="4"/>' +
-        '<text x="150" y="205" font-family="Arial, sans-serif" font-size="28" font-weight="bold" ' +
-        'fill="#30234a" text-anchor="middle">' + label + '</text>' +
+        '<rect width="300" height="400" fill="' + color + '"/>' +
+        '<rect x="16" y="16" width="268" height="368" fill="none" stroke="#ffffff" stroke-opacity="0.6" stroke-width="3"/>' +
+        titleText +
+        '<rect x="120" y="296" width="60" height="3" fill="#ffffff" fill-opacity="0.7"/>' +
+        '<text x="150" y="334" text-anchor="middle" font-family="Arial, sans-serif" ' +
+        'font-size="17" fill="#ffffff" fill-opacity="0.9">' + author + '</text>' +
         '</svg>';
 
     return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
@@ -18,62 +54,83 @@ function makeCover(label) {
 const sampleBooks = [
     {
         id: 1,
-        title: "JavaScript for Beginners",
-        author: "John Smith",
-        category: "Programming",
-        description: "A simple guide to learning JavaScript from the beginning.",
-        cover: makeCover("JavaScript"),
-        pdfUrl: "books/javascript.pdf",
-        rating: 4.5
-    },
-    {
-        id: 2,
-        title: "Introduction to Science",
-        author: "Sarah Johnson",
-        category: "Science",
-        description: "Learn basic scientific concepts and discoveries.",
-        cover: makeCover("Science"),
-        pdfUrl: "books/science.pdf",
-        rating: 4.2
-    },
-    {
-        id: 3,
-        title: "English Grammar",
-        author: "David Brown",
-        category: "Language",
-        description: "Improve your English grammar with simple lessons.",
-        cover: makeCover("English"),
-        pdfUrl: "books/english.pdf",
-        rating: 4.7
-    },
-    {
-        id: 4,
-        title: "The World of Literature",
-        author: "Emily Wilson",
-        category: "Literature",
-        description: "Explore stories and the wonderful world of literature.",
-        cover: makeCover("Literature"),
-        pdfUrl: "books/literature.pdf",
+        title: "The Kite Runner",
+        author: "Khaled Hosseini",
+        category: "Novels",
+        description: "A story of friendship, guilt and forgiveness that begins in Kabul.",
+        cover: makeCover("The Kite Runner", "Khaled Hosseini", "Novels"),
+        pdfUrl: "",
         rating: 4.6
     },
     {
-        id: 5,
-        title: "World History Basics",
-        author: "Michael Davis",
-        category: "History",
-        description: "A short introduction to the main events of world history.",
-        cover: makeCover("History"),
-        pdfUrl: "books/history.pdf",
+        id: 2,
+        title: "Crime and Punishment",
+        author: "Fyodor Dostoevsky",
+        category: "Novels",
+        description: "A poor student commits a crime and struggles with his conscience.",
+        cover: makeCover("Crime and Punishment", "Fyodor Dostoevsky", "Novels"),
+        pdfUrl: "books/sample.pdf",
+        rating: 4.5
+    },
+    {
+        
+        id: 3,
+        title: "A Brief History of Time",
+        author: "Stephen Hawking",
+        category: "Other",
+        description: "A clear introduction to space, time and the universe.",
+        cover: makeCover("A Brief History of Time", "Stephen Hawking", "Other"),
+        pdfUrl: "",
         rating: 4.3
     },
     {
+        id: 4,
+        title: "Divan of Hafez",
+        author: "Hafez of Shiraz",
+        category: "Poetry",
+        description: "Poems of love, wine and mystery by the great Persian poet.",
+        cover: makeCover("Divan of Hafez", "Hafez of Shiraz", "Poetry"),
+        pdfUrl: "",
+        rating: 4.8
+    },
+    {
+        id: 5,
+        title: "The Masnavi",
+        author: "Jalaluddin Rumi",
+        category: "Poetry",
+        description: "A long spiritual poem full of short stories and wisdom.",
+        cover: makeCover("The Masnavi", "Jalaluddin Rumi", "Poetry"),
+        pdfUrl: "",
+        rating: 4.9
+    },
+    {
         id: 6,
-        title: "HTML and CSS Basics",
-        author: "Anna Taylor",
-        category: "Programming",
-        description: "Build your first web pages with HTML and CSS.",
-        cover: makeCover("HTML and CSS"),
-        pdfUrl: "books/html-css.pdf",
+        title: "Meditations",
+        author: "Marcus Aurelius",
+        category: "Philosophy",
+        description: "Private notes of a Roman emperor on living with calm and duty.",
+        cover: makeCover("Meditations", "Marcus Aurelius", "Philosophy"),
+        pdfUrl: "",
+        rating: 4.5
+    },
+    {
+        id: 7,
+        title: "Man's Search for Meaning",
+        author: "Viktor E. Frankl",
+        category: "Self-Growth",
+        description: "How to find purpose in life, even in the hardest times.",
+        cover: makeCover("Man's Search for Meaning", "Viktor E. Frankl", "Self-Growth"),
+        pdfUrl: "",
+        rating: 4.7
+    },
+    {
+        id: 8,
+        title: "Sapiens",
+        author: "Yuval Noah Harari",
+        category: "History",
+        description: "A short history of how humans came to shape the whole world.",
+        cover: makeCover("Sapiens", "Yuval Noah Harari", "History"),
+        pdfUrl: "",
         rating: 4.4
     }
 ];
