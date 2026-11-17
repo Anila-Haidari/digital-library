@@ -1,0 +1,407 @@
+
+/* Hero Section */
+.hero {
+    background-image:
+        linear-gradient(135deg, rgba(37, 35, 74, 0.65), rgba(118, 85, 166, 0.55)),
+        url("../images/book.webp");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    max-width: 550px;
+    margin: auto;
+    background: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px;
+    font-size: 15px;
+}
+
+.search-box button {
+    background: #7655a6;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #5d4089;
+}
+
+/* Categories */
+.categories {
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.categories h2,
+.books-section h2 {
+    color: #25234a;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.category-btn {
+    background: #f0eafa;
+    color: #5d4089;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: #7655a6;
+    color: white;
+}
+
+/* Books Section */
+.books-section {
+    padding: 45px 7%;
+    text-align: center;
+    background: #faf9fc;
+    min-height: 250px;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Book Card */
+.book-card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book-card h3 {
+    color: #25234a;
+    margin: 14px 0 8px;
+}
+
+.book-card p {
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.book-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #7655a6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .hero {
+        padding: 65px 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .books-section {
+        padding: 35px 18px;
+    }
+}
+
+/* Improved Book Cards */
+
+.book-card {
+    overflow: hidden;
+    border: 1px solid #eee8f5;
+    text-align: left;
+}
+
+.book-card img {
+    background-color: #f0eafa;
+    display: block;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    min-height: 45px;
+}
+
+.book-card p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.book-card a {
+    display: inline-block;
+    background-color: #7655a6;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.book-card a:hover {
+    background-color: #5d4089;
+}
+
+/* Empty Search Result */
+
+.no-books {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #777;
+    padding: 35px 15px;
+    background-color: white;
+    border-radius: 10px;
+}
+/* ===== Book card fixes (add at the END of home.css) ===== */
+.book-list {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.book-card h3 {
+    line-height: 1.4;
+    min-height: 2.8em;          /* room for 2 lines of title */
+}
+
+.book-card p:last-of-type {
+    margin-bottom: 14px;
+}
+
+.book-card a {
+    margin-top: auto;           /* pushes the button to the bottom of every card */
+    align-self: flex-start;
+}
+
+/* Phones: two cards per row */
+@media (max-width: 600px) {
+    .book-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .book-card {
+        padding: 12px;
+    }
+
+    .book-card h3 {
+        font-size: 15px;
+    }
+}
+.hero-slogan {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+/* ===== Books background in the hero ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 260px;
+    background-image: var(--shelf);
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: auto 100%;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Category tiles with stacked covers ===== */
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.category-list .category-btn {
+    width: 130px;
+    padding: 14px 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #e3dcef;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.category-list .category-btn:hover {
+    background: #ffffff;
+    color: var(--dark);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.category-list .category-btn.active {
+    background: var(--secondary);
+    border-color: var(--primary);
+    color: var(--dark);
+}
+
+.stack {
+    position: relative;
+    width: 100%;
+    height: 84px;
+}
+
+.stack img {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 26px);
+    width: 52px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+.stack img,
+.stack .blank {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 26px);
+    width: 52px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+/* Empty place in the stack: a plain card in the category color */
+.stack .blank {
+    opacity: 0.45;
+    box-shadow: none;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Left, center (front) and right cover */
+.stack :nth-child(1) {
+    transform: translateX(-26px) rotate(-9deg);
+}
+
+.stack :nth-child(2) {
+    left: calc(50% - 29px);
+    width: 58px;
+    height: 78px;
+    z-index: 1;
+}
+
+.stack :nth-child(3) {
+    transform: translateX(26px) rotate(9deg);
+}
+
+@media (max-width: 600px) {
+    .category-list .category-btn {
+        width: 104px;
+        font-size: 14px;
+    }
+
+    .stack {
+        height: 76px;
+    }
+}
