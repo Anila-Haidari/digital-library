@@ -58,7 +58,7 @@ const sampleBooks = [
         author: "Khaled Hosseini",
         category: "Novels",
         description: "A story of friendship, guilt and forgiveness that begins in Kabul.",
-        cover: makeCover("The Kite Runner", "Khaled Hosseini", "Novels"),
+        cover: "images/covers/kite-runner.jpg",
         pdfUrl: "",
         rating: 4.6
     },
@@ -68,18 +68,17 @@ const sampleBooks = [
         author: "Fyodor Dostoevsky",
         category: "Novels",
         description: "A poor student commits a crime and struggles with his conscience.",
-        cover: makeCover("Crime and Punishment", "Fyodor Dostoevsky", "Novels"),
+        cover: "images/covers/crime-and-punishment.webp",
         pdfUrl: "books/sample.pdf",
         rating: 4.5
     },
     {
-        
         id: 3,
         title: "A Brief History of Time",
         author: "Stephen Hawking",
         category: "Other",
         description: "A clear introduction to space, time and the universe.",
-        cover: makeCover("A Brief History of Time", "Stephen Hawking", "Other"),
+        cover: "images/covers/brief-history-of-time.webp",
         pdfUrl: "",
         rating: 4.3
     },
@@ -89,7 +88,7 @@ const sampleBooks = [
         author: "Hafez of Shiraz",
         category: "Poetry",
         description: "Poems of love, wine and mystery by the great Persian poet.",
-        cover: makeCover("Divan of Hafez", "Hafez of Shiraz", "Poetry"),
+        cover: "images/covers/hafez-divan.webp",
         pdfUrl: "",
         rating: 4.8
     },
@@ -99,7 +98,7 @@ const sampleBooks = [
         author: "Jalaluddin Rumi",
         category: "Poetry",
         description: "A long spiritual poem full of short stories and wisdom.",
-        cover: makeCover("The Masnavi", "Jalaluddin Rumi", "Poetry"),
+        cover: "images/covers/masnavi.webp",
         pdfUrl: "",
         rating: 4.9
     },
@@ -109,7 +108,7 @@ const sampleBooks = [
         author: "Marcus Aurelius",
         category: "Philosophy",
         description: "Private notes of a Roman emperor on living with calm and duty.",
-        cover: makeCover("Meditations", "Marcus Aurelius", "Philosophy"),
+        cover: "images/covers/meditations.webp",
         pdfUrl: "",
         rating: 4.5
     },
@@ -119,17 +118,17 @@ const sampleBooks = [
         author: "Viktor E. Frankl",
         category: "Self-Growth",
         description: "How to find purpose in life, even in the hardest times.",
-        cover: makeCover("Man's Search for Meaning", "Viktor E. Frankl", "Self-Growth"),
+        cover: "images/covers/mans-search-for-meaning.webp",
         pdfUrl: "",
         rating: 4.7
     },
     {
         id: 8,
-        title: "Sapiens",
+        title: "Sapiens: A Graphic History",
         author: "Yuval Noah Harari",
         category: "History",
-        description: "A short history of how humans came to shape the whole world.",
-        cover: makeCover("Sapiens", "Yuval Noah Harari", "History"),
+        description: "The story of humankind told as an illustrated graphic novel.",
+        cover: "images/covers/sapiens.webp",
         pdfUrl: "",
         rating: 4.4
     }
