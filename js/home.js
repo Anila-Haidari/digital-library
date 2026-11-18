@@ -1,5 +1,3 @@
-
-
 const bookList = document.getElementById("bookList");
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
@@ -31,15 +29,16 @@ function displayBooks(books) {
         bookCard.classList.add("book-card");
 
         bookCard.innerHTML = `
-            <img src="${book.cover}" alt="${book.title}">
+            <div class="book-cover">
+                <img src="${book.cover}" alt="${book.title}">
+                <span class="book-badge" style="background:${coverColors[book.category] || "#7655a6"}">${book.category}</span>
+            </div>
 
             <h3>${book.title}</h3>
 
-            <p>Author: ${book.author}</p>
+            <p class="book-author">${book.author}</p>
 
-            <p>Category: ${book.category}</p>
-
-            <p>Rating: ⭐ ${book.rating || "Not rated"}</p>
+            <p class="book-rating">⭐ ${book.rating || "Not rated"}</p>
 
             <a href="details.html?id=${book.id}">
                 View Details
@@ -102,7 +101,8 @@ categoryButtons.forEach(function(button) {
 
 // Show all books
 displayBooks(allBooks);
-// Fill the stack of covers on each category tile 
+
+// ===== Fill the stack of covers on each category tile =====
 function fillCategoryStacks() {
     categoryButtons.forEach(function(button) {
         const stack = button.querySelector(".stack");
@@ -130,7 +130,10 @@ function fillCategoryStacks() {
         stack.innerHTML = html;
     });
 }
-// Featured books: the 4 best rated 
+
+fillCategoryStacks();
+
+// ===== Featured books: the 4 best rated =====
 const featuredList = document.getElementById("featuredList");
 
 const featuredBooks = allBooks
@@ -149,7 +152,8 @@ featuredList.innerHTML = featuredBooks.map(function(book) {
         </a>
     `;
 }).join("");
-// Clear filters button
+
+// ===== Clear filters button =====
 const clearBtn = document.getElementById("clearFilters");
 
 clearBtn.addEventListener("click", function() {
@@ -164,5 +168,3 @@ clearBtn.addEventListener("click", function() {
 
     filterBooks();
 });
-
-fillCategoryStacks();

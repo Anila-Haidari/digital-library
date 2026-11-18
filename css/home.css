@@ -478,7 +478,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== Clear filters button ===== */
+/* Clear filters button  */
 .clear-btn {
     display: block;
     margin: 22px auto 0;
@@ -499,4 +499,20 @@
 /* Smooth scroll to the books list */
 html {
     scroll-behavior: smooth;
+}
+/* ===== Category badge on the book cards ===== */
+.book-cover {
+    position: relative;
+}
+
+.book-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 12px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
