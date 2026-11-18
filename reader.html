@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read Book - Digital Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="details.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="logo-text">Digital Library</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="reader-container">
+      <div id="readerNotFound" class="card not-found-card" hidden>
+        <h2>Book Not Found!</h2>
+        <p style="margin-bottom: 18px">Unable to load the requested book.</p>
+        <a href="index.html" class="btn btn-primary">Back to Books</a>
+      </div>
+
+      <div
+        id="readerWrapper"
+        hidden
+        style="display: flex; flex-direction: column; gap: 16px"
+      >
+        <div class="reader-header">
+          <h1 id="readerBookTitle">Book Title</h1>
+          <p id="readerBookAuthor">Author Name</p>
+        </div>
+
+        <div id="noPdfBox" class="no-pdf-message" hidden>PDF Not Available</div>
+
+        <div id="pdfViewerBox" class="pdf-viewer" hidden>
+          <iframe id="pdfFrame" src=""></iframe>
+        </div>
+
+        <div class="reader-controls">
+          <a id="readerBackBtn" href="index.html" class="btn btn-secondary"
+            >Back</a
+          >
+          <a
+            id="readerDownloadBtn"
+            href="#"
+            download
+            class="btn btn-primary"
+            hidden
+            >Download</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Digital Library Project</p>
+    </footer>
+
+    <script src="books.js"></script>
+    <script src="storage.js"></script>
+    <script src="reader.js"></script>
+  </body>
+</html>

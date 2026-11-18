@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details - Digital Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="details.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="logo-text">Digital Library</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="notFoundCard" class="card not-found-card" hidden>
+        <h2>Book Not Found!</h2>
+        <p style="margin-bottom: 18px">
+          The requested book could not be found.
+        </p>
+        <a href="index.html" class="btn btn-primary">Back to Books</a>
+      </div>
+
+      <div id="detailsCard" class="card">
+        <div class="book-main-info">
+          <img
+            id="bookCover"
+            src="toxic-parents.png"
+            alt="Book Cover"
+            class="book-cover"
+          />
+          <div class="book-text-details">
+            <h1 id="bookTitle">Toxic Parents</h1>
+            <div class="book-info-row">
+              <strong>Author: </strong
+              ><span id="bookAuthor">Susan Forward</span>
+            </div>
+            <div class="book-info-row">
+              <strong>Category: </strong
+              ><span id="bookCategory">Psychology</span>
+            </div>
+            <div class="book-info-row">
+              <strong>Rating: </strong><span id="bookRating">4.9 / 5</span>
+            </div>
+            <p class="book-description" id="bookDescription">
+              Parents are human too and have their own flaws. Ignorance is one
+              of the biggest flaws that leads them to make mistakes in raising
+              their children.
+            </p>
+          </div>
+        </div>
+
+        <div id="noPdfMessage" class="no-pdf-message" hidden>
+          PDF Not Available
+        </div>
+
+        <div class="book-actions">
+          <a id="readOnlineBtn" href="reader.html?id=1" class="btn btn-primary"
+            >Read Online</a
+          >
+          <a
+            id="downloadBtn"
+            href="Books/toxic-parents.pdf"
+            download
+            class="btn btn-secondary"
+            >Download</a
+          >
+          <a href="index.html" class="btn btn-outline">Back to Books</a>
+        </div>
+      </div>
+    </main>
+
+    <section class="related-section" id="relatedSection" hidden>
+      <h2>Related Books</h2>
+      <div class="related-list" id="relatedList"></div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Digital Library Project</p>
+    </footer>
+
+    <script src="books.js"></script>
+    <script src="storage.js"></script>
+    <script src="details.js"></script>
+  </body>
+</html>
