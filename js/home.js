@@ -149,5 +149,20 @@ featuredList.innerHTML = featuredBooks.map(function(book) {
         </a>
     `;
 }).join("");
+// Clear filters button
+const clearBtn = document.getElementById("clearFilters");
+
+clearBtn.addEventListener("click", function() {
+    searchInput.value = "";
+    selectedCategory = "All";
+
+    categoryButtons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    document.querySelector('.category-btn[data-category="All"]').classList.add("active");
+
+    filterBooks();
+});
 
 fillCategoryStacks();

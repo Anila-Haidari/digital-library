@@ -460,3 +460,43 @@
         gap: 14px;
     }
 }
+/* ===== Explore Books button in the hero ===== */
+.hero-btn {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 30px;
+    background: var(--accent);
+    color: var(--dark);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.hero-btn:hover {
+    background: #f0c36e;
+    transform: translateY(-2px);
+}
+
+/* ===== Clear filters button ===== */
+.clear-btn {
+    display: block;
+    margin: 22px auto 0;
+    padding: 8px 20px;
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.clear-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* Smooth scroll to the books list */
+html {
+    scroll-behavior: smooth;
+}
