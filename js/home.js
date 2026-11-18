@@ -102,12 +102,15 @@ categoryButtons.forEach(function(button) {
 // Show all books
 displayBooks(allBooks);
 
-// ===== Fill the stack of covers on each category tile =====
+//  Fill the stack of covers on each category tile 
 function fillCategoryStacks() {
     categoryButtons.forEach(function(button) {
         const stack = button.querySelector(".stack");
         const category = button.dataset.category;
         const color = coverColors[category] || "#7655a6";
+        button.style.setProperty("--tile-color", color);
+        button.style.setProperty("--tile-bg", color + "1f");
+        button.style.setProperty("--tile-bg-strong", color + "38");
 
         const booksOfCategory = allBooks.filter(function(book) {
             return category === "All" || book.category === category;
@@ -133,7 +136,7 @@ function fillCategoryStacks() {
 
 fillCategoryStacks();
 
-// ===== Featured books: the 4 best rated =====
+// Featured books: the 4 best rated
 const featuredList = document.getElementById("featuredList");
 
 const featuredBooks = allBooks
@@ -153,7 +156,7 @@ featuredList.innerHTML = featuredBooks.map(function(book) {
     `;
 }).join("");
 
-// ===== Clear filters button =====
+//  Clear filters button 
 const clearBtn = document.getElementById("clearFilters");
 
 clearBtn.addEventListener("click", function() {
