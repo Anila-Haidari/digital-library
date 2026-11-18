@@ -405,3 +405,58 @@
         height: 76px;
     }
 }
+/* ===== Featured books ===== */
+.featured-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px 10px;
+    text-align: center;
+}
+
+.featured-section h2 {
+    color: var(--dark);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.featured-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.featured-card {
+    text-decoration: none;
+    color: var(--dark);
+    transition: 0.2s;
+}
+
+.featured-card:hover {
+    transform: translateY(-4px);
+}
+
+.featured-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+    background: var(--secondary);
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.featured-card h3 {
+    font-size: 16px;
+    margin: 12px 0 4px;
+}
+
+.featured-card p {
+    font-size: 14px;
+    color: var(--text);
+}
+
+@media (max-width: 700px) {
+    .featured-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+}

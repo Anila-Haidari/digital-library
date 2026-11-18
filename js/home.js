@@ -102,7 +102,7 @@ categoryButtons.forEach(function(button) {
 
 // Show all books
 displayBooks(allBooks);
-// ===== Fill the stack of covers on each category tile =====
+// Fill the stack of covers on each category tile 
 function fillCategoryStacks() {
     categoryButtons.forEach(function(button) {
         const stack = button.querySelector(".stack");
@@ -130,5 +130,24 @@ function fillCategoryStacks() {
         stack.innerHTML = html;
     });
 }
+// Featured books: the 4 best rated 
+const featuredList = document.getElementById("featuredList");
+
+const featuredBooks = allBooks
+    .slice()
+    .sort(function(a, b) {
+        return (b.rating || 0) - (a.rating || 0);
+    })
+    .slice(0, 4);
+
+featuredList.innerHTML = featuredBooks.map(function(book) {
+    return `
+        <a class="featured-card" href="details.html?id=${book.id}">
+            <img src="${book.cover}" alt="${book.title}">
+            <h3>${book.title}</h3>
+            <p>⭐ ${book.rating || "Not rated"}</p>
+        </a>
+    `;
+}).join("");
 
 fillCategoryStacks();
